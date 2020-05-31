@@ -6,7 +6,7 @@ async function robot (content){
     await fetchContentFromWikipedia(content)
     sanitizeContent(content)
     breakContentIntoSentences(content)
-
+    
     async function fetchContentFromWikipedia(content){
         const algorithmiaAutenticated = algorithmia(algorithmiaApiKey)
         const wikipediaAlgorithm = algorithmiaAutenticated.algo('web/WikipediaParser/0.1.2')
@@ -47,7 +47,7 @@ async function robot (content){
         const sentences = sentenceBoundaryDetection.sentences(content.sourceContentSanitized)
         sentences.forEach((sentences) => {
             content.sentences.push({
-                text: sentence,
+                text: sentences,
                 keywords: [],
                 images: []
             })
