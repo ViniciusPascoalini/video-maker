@@ -24,7 +24,7 @@
     "googleapis": "^51.0.0",
     "image-downloader": "^3.4.2",
     "readline-sync": "^1.4.10",
-    "sbd": "^1.0.14",
+    "sbd": "^1.0.18",
     "watson-developer-cloud": "^3.18.2"
   }
 }
