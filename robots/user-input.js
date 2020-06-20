@@ -3,7 +3,7 @@ const state = require('./state.js')
 
 function robot(content){
 
-    const content = {
+    content = {
         maximumSentences: 7
     }
 
