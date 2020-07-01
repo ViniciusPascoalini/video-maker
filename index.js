@@ -8,13 +8,13 @@ const robots = {
 
 async function start() {
 
-    robots.userInput()
-    await robots.text()
-    await robots.image()
+    //robots.userInput()
+    //await robots.text()
+    //await robots.image()
     await robots.video()
 
-    const content = robots.state.load()
-    console.dir(content, { depth: null })
+    //const content = robots.state.load()
+    //console.dir(content, { depth: null })
 }
 
 start()

@@ -15,10 +15,10 @@ async function robot() {
     console.log('> [video-robot] Starting...')
     const content = state.load()
 
-    await convertAllImages(content)
-    await creatAllSentenceImages(content)
-    await createYouTubeThumbnail()
-    await createAfterEffectsScript(content)
+    //await convertAllImages(content)
+    //await creatAllSentenceImages(content)
+    //await createYouTubeThumbnail()
+    //await createAfterEffectsScript(content)
     await renderVideoWithNode(content)
 
     state.save(content)
@@ -168,7 +168,7 @@ async function robot() {
                 useSubRipSubtitles: false,
                 subtitleStyle: {
                     Fontname: 'Verdana',
-                    Fontsize: '26',
+                    Fontsize: '30',
                     PrimaryColour: '11861244',
                     SecondaryColour: '11861244',
                     TertiaryColour: '11861244',
@@ -186,7 +186,7 @@ async function robot() {
             }
 
             videoshow(images, videoOptions)
-                //.audio("song.mp3")
+                .audio("./templates/1/newsroom.mp3")
                 .save("content/output.mp4")
                 .on('start', function(command) {
                     console.log('ffmpeg process started:', command)
