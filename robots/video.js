@@ -18,7 +18,6 @@ async function robot() {
     //await convertAllImages(content)
     //await creatAllSentenceImages(content)
     //await createYouTubeThumbnail()
-    //await createAfterEffectsScript(content)
     await renderVideoWithNode(content)
 
     state.save(content)
