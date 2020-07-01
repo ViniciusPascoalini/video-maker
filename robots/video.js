@@ -15,9 +15,9 @@ async function robot() {
     console.log('> [video-robot] Starting...')
     const content = state.load()
 
-    //await convertAllImages(content)
-    //await creatAllSentenceImages(content)
-    //await createYouTubeThumbnail()
+    await convertAllImages(content)
+    await creatAllSentenceImages(content)
+    await createYouTubeThumbnail()
     await renderVideoWithNode(content)
 
     state.save(content)
@@ -142,6 +142,7 @@ async function robot() {
 
     async function renderVideoWithNode(content) {
         return new Promise((resolve, reject) => {
+            console.log('> Rendering video')
 
             let images = []
 
