@@ -81,7 +81,7 @@ async function robot() {
                     }
                     console.log('> Acess tokens received!')
 
-                    OAuthClient.setCredential(tokens)
+                    OAuthClient.setCredentials(tokens)
                     resolve()
                 })
             })
@@ -114,9 +114,9 @@ async function robot() {
 
         const requestParameters = {
             part: 'snippet, status',
-            rerquestBody: {
+            requestBody: {
                 snippet: {
-                    tittle: videoTitle,
+                    title: videoTitle,
                     description: videoDescription,
                     tags: videoTags
                 },
@@ -128,6 +128,7 @@ async function robot() {
                     body: fs.createReadStream(videoFilePath)
                 }
             }
+            
 
         const youtubeResponse = await youtube.videos.insert(requestParameters, {
             onUploadProgress: onUploadProgress
@@ -159,7 +160,7 @@ async function robot() {
         console.log('> Thumbnail uploaded!')
     }
 
-    
+
 }
 
 module.exports = robot
