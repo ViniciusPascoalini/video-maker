@@ -1,8 +1,8 @@
 const gm = require('gm').subClass({imageMagick: true})
 const state = require('./state.js')
-const spawn = require('child_process').spawn
+//const spawn = require('child_process').spawn
 const path = require('path')
-const rootPath = path.resolve(__dirname, '..')
+//const rootPath = path.resolve(__dirname, '..')
 const videoshow = require('videoshow')
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path
 const ffprobePath = require('@ffprobe-installer/ffprobe').path
@@ -60,7 +60,7 @@ async function robot() {
                         return reject(error)
                     }
 
-                    console.log(`> Image converted: ${inputFile}`)
+                    console.log(`> [video-robot] Image converted: ${outputFile}`)
                     resolve()
                 })
         })
@@ -119,7 +119,7 @@ async function robot() {
                         return reject(error)
                     }
 
-                    console.log(`> Sentence created: ${outputFile}`)
+                    console.log(`> [video-robot] Sentence created: ${outputFile}`)
                     resolve()
                 })
         })
@@ -134,7 +134,7 @@ async function robot() {
                         return reject(error)
                     }
 
-                    console.log('> Youtube thumbnail created')
+                    console.log('> [video-robot] Youtube thumbnail created')
                     resolve()
                 })
         })
@@ -142,7 +142,7 @@ async function robot() {
 
     async function renderVideoWithNode(content) {
         return new Promise((resolve, reject) => {
-            console.log('> Rendering video')
+            console.log('> [video-robot] Rendering video...')
 
             let images = []
 
